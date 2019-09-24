@@ -78,7 +78,7 @@ class SendMail extends Component {
     }
 
     
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps){   
         const mail = nextProps.mail.mail;
         console.log(mail)
         if(mail){

@@ -39,7 +39,8 @@
         transporter.sendMail(mailOptions, function(error, info){
 
             if(error) return res.json({
-                post : true,
+                post : false,
+                info : error
             })
            
             res.status(200).json({
