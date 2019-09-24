@@ -1,0 +1,67 @@
+    /**
+     * Node Server 
+     */
+    const express = require('express');
+    const bodyParser = require('body-parser');
+    const app = express();
+    const {config} = require('./config/config');
+    app.use(bodyParser.json());
+   
+    app.use(express.static('frontend/build'))
+
+    /**
+     * 
+     *  Mail ---------------------------------------------  
+     * 
+     */
+    //send email
+     app.post("/api/sendMail",(req,res)=>{
+        console.log(req.body)
+        //nodemailer for sending mail
+        const nodemailer = require('nodemailer');
+        //account from which we have to send email make sure use have allow permisions in account https://myaccount.google.com/lesssecureapps
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+              user: config.email, //email
+              pass: config.pass //password
+            }
+          });
+
+        const mailOptions = req.body;   
+        /** mailOptions =  {  from: 'prakash.raoinfotech@gmail.com',
+                              to: 'karenaprakash14@gmail.com',
+                              subject: 'lk',
+                              text: 'lk' 
+                            }
+         */
+        //transporter which send our mail                     
+        transporter.sendMail(mailOptions, function(error, info){
+
+            if(error) return res.json({
+                post : true,
+            })
+           
+            res.status(200).json({
+                post : true,
+                info : info.response
+            })
+        });
+
+     })
+   
+
+    if(process.env.NODE_ENV === 'production'){
+        const path  =  require('path');
+        app.get('/*',(req,res)=>{
+            res.sendfile(path.resolve(__dirname,'frontend','build','index.html'))
+        })
+    }
+
+  
+    const port = process.env.PORT || 3003;
+    app.listen(port,()=>{
+        console.log('SERVER RUNNING.')
+    })
+
+
