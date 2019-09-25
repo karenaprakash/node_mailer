@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {reset} from 'redux-form';
+import {Grid} from '@material-ui/core';
 
 /*------- connect react with redux --------*/
 import { connect } from 'react-redux';
@@ -77,39 +78,24 @@ class SendMail extends Component {
           this.props.dispatch(sendMail(values));
     }
 
-    
-    componentWillReceiveProps(nextProps){   
-        const mail = nextProps.mail.mail;
-        console.log(mail)
-        if(mail){
-            if(mail.post){
-               this.setState({
-                   mailSent : true
-               })
-            }else{
-                this.setState({
-                    mailSent : false
-                })
-            }
-        }
-      
-    }
 
- 
-  renderResult = () => (
-     
-        this.state.isSubmited && this.state.mailSent !== null ? ( this.state.mailSent  ? <h3> Mail Sent </h3> : <h3>Mail Not sent</h3> ) : null          
-     
-)
     render(){
 
        //console.log(this.props);
 
         return(
-            <div className="Form">                  
+            <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            >
+                <Grid item xs={1} md={2} lg={3}>
+                </Grid>
+                <Grid item xs={10} md={8} lg={6}>
+                <div className="Form">                  
                 <form onSubmit={this.props.handleSubmit((event)=>this.onSubmit(event))} method="POST">
 
-                    { this.renderResult()}
                      <Field
                         myLabel="To Email"
                         name="to"
@@ -132,6 +118,12 @@ class SendMail extends Component {
                 
                 </form>
             </div>
+                </Grid>
+                <Grid item xs={1} md={2} lg={3}>
+                </Grid>
+                
+            </Grid>
+          
         )
     }
 }
