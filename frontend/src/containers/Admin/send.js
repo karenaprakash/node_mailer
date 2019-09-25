@@ -69,7 +69,7 @@ class SendMail extends Component {
   
 /*------- onSubmit() : runs on submit  --------*/
     onSubmit(values){       
-        console.log(values)
+        //console.log(values)
         this.setState({
             isSubmited : true
         })
@@ -152,7 +152,7 @@ function validate(values){
     /*------- it returns messages when action is called and state going to change  --------*/
    
 function mapStateToProps(state){
-    console.log(state)
+   // console.log(state)
     
     let mail_value = {}
     mail_value =  {

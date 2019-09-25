@@ -13,7 +13,7 @@ function mailSendSuccess(response) {
 }
 
 function mailSendError(error) {
-    console.log(error);
+   // console.log(error);
 	return {
 		type: 'SEND_MAIL',
 		payload: error
@@ -23,10 +23,10 @@ function mailSendError(error) {
 
 //clearBookWithReviewer : clear book used when we go inside perticuler book and come outside  
 export const sendMail = (data) => (dispatch) =>{
-    console.log(data)
+    //console.log(data)
     const request = axios.post("/api/sendMail",data)
     .then(response => {
-        console.log(response.data);
+      //  console.log(response.data);
         if(response.data.post){
             alert('Email Sent successfully.')
             dispatch(reset('sendMail'))
