@@ -11,7 +11,7 @@ npm install concurrently@3.5.1 express@4.16.2 redux-form@8.2.6 redux-thunk@2.3.0
 6.  "nodemailer" : "^6.3.0"
 7.  "nodemailer-smtp-transport": "^2.7.4",
 
-Allow your account to send mails:
+Allow your account to send mails: for error response code : 534
 https://myaccount.google.com/lesssecureapp
 https://accounts.google.com/DisplayUnlockCaptcha 
 
