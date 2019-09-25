@@ -19,14 +19,17 @@
         console.log(req.body)
         //nodemailer for sending mail
         const nodemailer = require('nodemailer');
+        var smtpTransport = require('nodemailer-smtp-transport');
+
         //account from which we have to send email make sure use have allow permisions in account https://myaccount.google.com/lesssecureapps
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail',
+        const transporter = nodemailer.createTransport(smtpTransport({
+            service: 'gmail',
+            host: 'smtp.gmail.com',
             auth: {
               user:  "prakash.raoinfotech@gmail.com", //config.email 
               pass:  "70462071"              //config.pass //password
             }
-          });
+          }));
 
         const mailOptions = req.body;   
         /** mailOptions =  {  from: 'prakash.raoinfotech@gmail.com',

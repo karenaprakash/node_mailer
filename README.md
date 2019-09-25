@@ -9,6 +9,7 @@ npm install concurrently@3.5.1 express@4.16.2 redux-form@8.2.6 redux-thunk@2.3.0
 4.  "redux-thunk": "^2.3.0"
 5.  "body-parser" : "^1.18.2"
 6.  "nodemailer" : "^6.3.0"
+7.  "nodemailer-smtp-transport": "^2.7.4",
 
 
 
