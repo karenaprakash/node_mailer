@@ -7,5 +7,3 @@ const config = {
 }
 
 module.exports = {config}
-
-//mongodb://rao:raoinfotech@54.185.16.135:27017/meme-generator"
