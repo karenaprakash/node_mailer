@@ -1,3 +1,5 @@
+# NODE_MAILER : SEND MAIL USING NODE MAILER + SMTP 
+
 ### run app 
 npm run dev 
 
@@ -29,3 +31,6 @@ npm http-proxy-middleware@0.19.1 react-fontawesome@1.6.1 react-redux@7.1.1 redux
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.2.0"
      "@material-ui/core": "^4.4.3",
+     
+     
+     ## Hit the star button if you like my work :)
