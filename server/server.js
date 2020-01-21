@@ -26,18 +26,13 @@
             service: 'gmail',
             host: 'smtp.gmail.com',
             auth: {
-              user:  "prakash.raoinfotech@gmail.com", //config.email 
-              pass:  "70462071"              //config.pass //password
+              user:  "YOUR_USER_NAME", //config.email 
+              pass:  "PASSWORD"              //config.pass //password
             }
           }));
 
         const mailOptions = req.body;   
-        /** mailOptions =  {  from: 'prakash.raoinfotech@gmail.com',
-                              to: 'karenaprakash14@gmail.com',
-                              subject: 'lk',
-                              text: 'lk' 
-                            }
-         */
+       
         //transporter which send our mail                     
         transporter.sendMail(mailOptions, function(error, info){
 
